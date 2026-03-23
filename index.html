@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alondra Auto Care | Paramount Auto Repair</title>
+  <meta
+    name="description"
+    content="Alondra Auto Care in Paramount, CA offers auto repair, diagnostics, brakes, oil changes, and general maintenance. Call or visit for reliable service."
+  />
+  <style>
+    :root {
+      --bg: #dfe8ee;
+      --bg-soft: #eef3f6;
+      --card: #fffdfb;
+      --text: #2f3438;
+      --muted: #66727c;
+      --accent: #b13a34;
+      --accent-dark: #8f2e29;
+      --light: #f7f3ee;
+      --border: #d6d9dc;
+      --max: 1120px;
+      --shadow: 0 12px 30px rgba(39, 47, 54, 0.08);
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #edf3f7 0%, #f4efe8 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(177, 58, 52, 0.18);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.18);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    header {
+      background:
+        linear-gradient(rgba(120, 138, 152, 0.48), rgba(83, 95, 104, 0.58)),
+        url("background-photo.jpg") center/cover no-repeat;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.96);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 48px 0 92px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.16);
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.94);
+      max-width: 700px;
+      margin-bottom: 22px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge {
+      background: rgba(250, 244, 236, 0.22);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-card {
+      background: rgba(252, 248, 243, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 16px 38px rgba(34, 42, 48, 0.14);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    section {
+      padding: 30px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .services-promo {
+      margin: 26px auto 0;
+      max-width: 540px;
+      background: linear-gradient(180deg, #fff7f2 0%, #fffdfb 100%);
+      border: 2px dashed rgba(177, 58, 52, 0.45);
+      border-radius: 18px;
+      padding: 32px 28px;
+      text-align: center;
+      color: #8f2e29;
+      box-shadow: 0 16px 32px rgba(177, 58, 52, 0.12);
+      font-weight: 700;
+      position: relative;
+    }
+
+    .services-promo::before,
+    .services-promo::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 26px;
+      height: 26px;
+      background: linear-gradient(180deg, #edf3f7 0%, #f4efe8 100%);
+      border: 2px solid rgba(177, 58, 52, 0.2);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .services-promo::before {
+      left: -14px;
+    }
+
+    .services-promo::after {
+      right: -14px;
+    }
+
+    .services-promo strong {
+      display: block;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .services-promo span {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #7a3a33;
+      font-weight: 600;
+    }
+
+    .services-grid,
+    .photos-grid,
+    .contact-grid,
+    .reviews-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+    }
+
+    .services-grid .card:last-child:nth-child(7) {
+      grid-column: 2;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(124, 132, 138, 0.18);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #22282d;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .yelp-rating-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .yelp-rating-card p,
+    .yelp-rating-card a {
+      text-align: center;
+      width: 100%;
+    }
+
+    .stars {
+      font-size: 2rem;
+      letter-spacing: 0.15em;
+      color: #d32323;
+      margin-bottom: 10px;
+    }
+
+    .google-stars {
+      margin-top: 20px;
+    }
+
+    .service-highlight {
+      border: 1px solid rgba(177, 58, 52, 0.28);
+      background: linear-gradient(180deg, #fbf4f0 0%, #fffdfb 100%);
+      position: relative;
+      box-shadow: 0 16px 34px rgba(177, 58, 52, 0.1);
+    }
+
+    .service-badge {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #b13a34;
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .about .card {
+      height: 100%;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      background: #f1e6db;
+      border: 1px solid rgba(177, 58, 52, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      color: #9a342e;
+    }
+
+    .stat-wide {
+      text-align: left;
+      padding: 22px 24px;
+    }
+
+    .photos-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .photos-grid img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .about img,
+    .photos-grid img {
+      border: 1px solid rgba(104, 113, 120, 0.16);
+    }
+
+    .faq-list {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    details {
+      background: rgba(255, 253, 251, 0.92);
+      border-radius: 14px;
+      padding: 18px 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(124, 132, 138, 0.16);
+    }
+
+    summary {
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: stretch;
+    }
+
+    .reviews-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .reviews-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(104, 113, 120, 0.16);
+    }
+
+    .contact-card p,
+    .contact-card li {
+      color: var(--muted);
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      min-height: 420px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #a43731, #c55545);
+      color: white;
+      text-align: center;
+      border-radius: 18px;
+      padding: 52px 28px;
+      box-shadow: 0 18px 40px rgba(164, 55, 49, 0.18);
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    footer {
+      padding: 28px 0 50px;
+      text-align: center;
+      color: #6c7378;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about,
+      .contact-grid,
+      .services-grid,
+      .photos-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Alondra Auto Care</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#photos">Photos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="tel:+15626331188">Call Now</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div>
+          <h1>Trusted Auto Repair in Paramount, CA</h1>
+          <p>
+            Alondra Auto Care provides dependable service, routine maintenance,
+            and honest auto repair for drivers in Paramount and surrounding
+            areas. Stop by, call us, or get directions today.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="tel:+15626331188">(562) 633-1188</a>
+            <a
+              class="btn btn-outline"
+              href="https://www.google.com/maps/search/?api=1&query=8055+Alondra+Blvd,+Paramount,+CA+90723"
+              target="_blank"
+              rel="noopener"
+            >
+              Get Directions
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="badge">Mon–Fri: 8:00 AM–6:00 PM</div>
+            <div class="badge">Sat: 8:00 AM–4:00 PM</div>
+            <div class="badge">Paramount, CA</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Why Drivers Choose Us</h3>
+          <ul>
+            <li>✔ Honest, straightforward service</li>
+            <li>✔ Maintenance and general auto repair</li>
+            <li>✔ Convenient Paramount location</li>
+            <li>✔ Friendly local shop atmosphere</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="about">
+          <div class="card">
+            <h2>Local Auto Care With a Practical, No-Nonsense Approach</h2>
+            <p>
+              Whether your vehicle needs routine maintenance, diagnostics, brake
+              work, or general repair, Alondra Auto Care is here to help keep
+              you on the road. This page is designed to give customers quick
+              access to services, shop details, photos, answers to common
+              questions, and easy contact information.
+            </p>
+
+            <div class="stats">
+              <div class="stat stat-wide">
+                <strong>Over 25 Years of Service</strong>
+                Founded in 2001, Alondra Auto Care has served the southern Los Angeles area and has garnered a reputation of precision and expertise.
+                Our owner and manager, Magic, is trustworthy, reliable, and knowledgeable - a skill that has earned him a reputation as one of the very best in Los Angeles.
+              </div>
+            </div>
+          </div>
+
+          <img
+            src="smog-cert.png"
+            alt="Technician working on a vehicle"
+          />
+        </div>
+      </div>
+    </section>
+
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>
+            A clean, simple overview of the repair and maintenance services customers commonly look for, including smog checks.
+          </p>
+          <div class="services-promo">
+            <strong>$10 OFF ALL SMOG CHECKS</strong>
+            <span>Print or display this coupon when requesting service. Pass your smog check or you don’t pay.</span>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <div class="card service-highlight">
+            <span class="service-badge">Featured Service</span>
+            <h3>Smog Checks</h3>
+            <p>
+              Fast, convenient smog check service to help drivers stay compliant and get back on the road quickly.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Diagnostics</h3>
+            <p>
+              Trouble lights, drivability issues, unusual sounds, and general
+              inspection of vehicle problems.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Brake Service</h3>
+            <p>
+              Brake inspection, pad replacement, and related brake system
+              service to help maintain safe stopping performance.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Oil Changes & Maintenance</h3>
+            <p>
+              Routine maintenance services to help extend vehicle life and keep
+              your car running smoothly.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Engine Repair</h3>
+            <p>
+              General engine-related repair and problem diagnosis for common
+              performance issues.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Suspension & Steering</h3>
+            <p>
+              Inspection and repair of ride, handling, and steering-related
+              concerns.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>General Auto Repair</h3>
+            <p>
+              Support for a wide range of vehicle repair needs for many common
+              makes and models.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="container">
+
+        <div class="photos-grid">
+          <img
+            src="photo-1.png"
+            alt="Alondra Auto Care shop photo 1"
+          />
+          <img
+            src="photo-2.png"
+            alt="Alondra Auto Care shop photo 2"
+          />
+          <img
+            src="photo-3.png"
+            alt="Alondra Auto Care shop photo 3"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details open>
+            <summary>Do I need an appointment?</summary>
+            <p>
+              We happily take walk-ins at any time. Calling ahead is a good idea, especially for larger repairs, but
+              customers can also contact the shop directly to ask about current
+              availability.
+            </p>
+          </details>
+
+          <details>
+            <summary>What kinds of vehicles do you work on?</summary>
+            <p>
+              We are capable of doing repairs on almost every vehicle on the market.
+              Call to confirm support for your specific make, model, and issue.
+            </p>
+          </details>
+
+          <details>
+            <summary>How long will my repair take?</summary>
+            <p>
+              Timing depends on the problem, needed parts, and workload. Small
+              maintenance jobs may take a few hours, while larger repairs can take
+              a few days to weeks.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I call for shop information?</summary>
+            <p>
+              Yes. For service questions, hours, location details, or general
+              inquiries, call <a href="tel:+15626331188">(562) 633-1188</a>.
+            </p>
+          </details>
+
+          <details>
+            <summary>Where are you located?</summary>
+            <p>
+              8055 Alondra Blvd, Paramount, CA 90723.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact & Location</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <h3>Alondra Auto Care</h3>
+            <ul class="contact-list">
+              <li><strong>Phone:</strong> <a href="tel:+15626331188">(562) 633-1188</a></li>
+              <li><strong>Address:</strong> 8055 Alondra Blvd, Paramount, CA 90723</li>
+              <li><strong>Hours:</strong> Monday–Friday: 8:00 AM–6:00 PM</li>
+              <li><strong>Saturday:</strong> 8:00 AM–4:00 PM</li>
+              <li><strong>Sunday:</strong> Closed</li>
+            </ul>
+
+            <div style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap;">
+              <a class="btn" href="tel:+15626331188">Call the Shop</a>
+              <a
+                class="btn"
+                href="https://www.google.com/maps/search/?api=1&query=8055+Alondra+Blvd,+Paramount,+CA+90723"
+                target="_blank"
+                rel="noopener"
+              >
+                Open in Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="map-wrap">
+            <iframe
+              title="Google Map of Alondra Auto Care"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=8055+Alondra+Blvd,+Paramount,+CA+90723&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Need Reliable Auto Service in Paramount?</h2>
+          <p>
+            Call Alondra Auto Care for shop information, service questions, and
+            directions.
+          </p>
+          <a class="btn" href="tel:+15626331188">Call (562) 633-1188</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Alondra Auto Care. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
