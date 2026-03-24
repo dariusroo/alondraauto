@@ -8,6 +8,7 @@
     name="description"
     content="Alondra Auto Care in Paramount, CA offers auto repair, diagnostics, brakes, oil changes, and general maintenance. Call or visit for reliable service."
   />
+  <meta name="robots" content="index, follow" />
   <style>
     :root {
       --bg: #dfe8ee;
@@ -494,6 +495,28 @@
       .photos-grid,
       .reviews-grid {
         grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        gap: 16px;
+      }
+
+      .services-grid .card,
+      .services-grid .card:last-child:nth-child(7) {
+        grid-column: auto;
+      }
+
+      .services-grid .card {
+        min-height: 0;
+        padding: 24px 20px;
+      }
+
+      .services-grid .card h3 {
+        margin-bottom: 8px;
+      }
+
+      .services-grid .card p {
+        line-height: 1.55;
       }
 
       .stats {
