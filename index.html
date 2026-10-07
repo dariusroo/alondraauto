@@ -563,6 +563,21 @@
       font-size: 0.95rem;
     }
 
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: var(--accent-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     .contact-actions {
       margin-top: 22px;
       display: flex;
@@ -921,6 +936,10 @@
 
   <footer>
     <div class="container">
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
       <p>© Alondra Auto Care. All rights reserved.</p>
     </div>
   </footer>
